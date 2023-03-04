@@ -1,0 +1,98 @@
+[
+  {
+    "question": "Was ist die Hauptfunktion von DNS?",
+    "answer_1": "Verbindungsherstellung zwischen Servern",
+    "answer_2": "Verschlüsselung von Netzwerkkommunikation",
+    "answer_3": "Identifikation von Malware-Infektionen",
+    "answer_4": "Auflösung von Domänennamen zu IP-Adressen",
+    "right_answer": 4
+  },
+  {
+    "question": "Welches Protokoll wird zum Abrufen von E-Mails verwendet?",
+    "answer_1": "FTP",
+    "answer_2": "HTTP",
+    "answer_3": "SMTP",
+    "answer_4": "POP3",
+    "right_answer": 4
+  },
+  {
+    "question": "Welche Sprache wird häufig für Webentwicklung verwendet?",
+    "answer_1": "Java",
+    "answer_2": "Python",
+    "answer_3": "Ruby",
+    "answer_4": "JavaScript",
+    "right_answer": 4
+  },
+  {
+    "question": "Welches Betriebssystem wurde von Microsoft entwickelt?",
+    "answer_1": "macOS",
+    "answer_2": "Ubuntu",
+    "answer_3": "Windows",
+    "answer_4": "Android",
+    "right_answer": 3
+  },
+  {
+    "question": "Was ist ein Byte?",
+    "answer_1": "Eine Einheit zur Messung der Frequenz",
+    "answer_2": "Eine Einheit zur Messung der Länge",
+    "answer_3": "Eine Einheit zur Messung der Masse",
+    "answer_4": "Eine Einheit zur Messung der Datenmenge",
+    "right_answer": 4
+  },
+  {
+    "question": "Was ist ein Algorithmus?",
+    "answer_1": "Eine Programmiersprache",
+    "answer_2": "Ein mathematischer Ausdruck",
+    "answer_3": "Eine Schleife in einem Programm",
+    "answer_4": "Eine Schritt-für-Schritt-Anweisung zur Lösung eines Problems",
+    "right_answer": 4
+  },
+  {
+    "question": "Was ist ein Betriebssystem?",
+    "answer_1": "Ein Programm zur Datenanalyse",
+    "answer_2": "Eine Anwendung zum Schreiben von Texten",
+    "answer_3": "Eine Sammlung von Anwendungen zur Systemverwaltung",
+    "answer_4": "Eine Software, die die Ressourcen eines Computers verwaltet",
+    "right_answer": 4
+  },
+  {
+    "question": "Was ist der Unterschied zwischen HTTP und HTTPS?",
+    "answer_1": "HTTP ist schneller als HTTPS",
+    "answer_2": "HTTP ist sicherer als HTTPS",
+    "answer_3": "HTTP überträgt Daten im Klartext, während HTTPS verschlüsselt ist",
+    "answer_4": "HTTP wird für mobile Geräte verwendet, während HTTPS für Desktop-Geräte verwendet wird",
+    "right_answer": 3
+  },
+  {
+    "question": "Was ist eine Variable?",
+    "answer_1": "Ein Teil eines Netzwerkprotokolls",
+    "answer_2": "Ein spezielles Zeichen in einer Programmiersprache",
+    "answer_3": "Ein Speicherbereich, der einen Wert enthält",
+    "answer_4": "Ein bestimmter Datentyp in einer Programmiersprache",
+    "right_answer": 3
+  },
+  {
+    "question": "Was ist ein Datenbankmanagementsystem?",
+    "answer_1": "Eine Software, die die Netzwerkverbindung verwaltet",
+    "answer_2": "Eine Anwendung zur Datenanalyse",
+    "answer_3": "Ein System zur Verwaltung von Datenbanken",
+    "answer_4": "Eine Hardware-Komponente für den Speicher von Daten",
+    "right_answer": 3
+  },
+  {
+    "question": "Was ist der Unterschied zwischen einem Compiler und einem Interpreter?",
+    "answer_1": "Ein Compiler übersetzt Quellcode in maschinenlesbaren Code, während ein Interpreter den Code Zeile für Zeile ausführt",
+    "answer_2": "Ein Compiler führt den Quellcode direkt aus, während ein Interpreter den Code in maschinenlesbaren Code übersetzt",
+    "answer_3": "Ein Compiler ist schneller als ein Interpreter",
+    "answer_4": "Ein Interpreter ist schneller als ein Compiler",
+    "right_answer": 1
+  },
+  {
+    "question": "Was ist ein Firewall?",
+    "answer_1": "Eine Software, die Viren entfernt",
+    "answer_2": "Eine Hardware-Komponente, die den Netzwerkverkehr überwacht und regelt",
+    "answer_3": "Ein Sicherheitsprotokoll für mobile Geräte",
+    "answer_4": "Eine Anwendung zur Datenanalyse",
+    "right_answer": 2
+  }
+]
