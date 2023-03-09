@@ -61,6 +61,72 @@ const questions = [
     },
     right_answer: "200 Milliarden",
   },
+  {
+    question: "Wie viele Rippenpaare hat ein Mensch?",
+    answers: {
+      1: "8",
+      2: "12",
+      3: "16",
+      4: "7",
+    },
+    right_answer: "12",
+  },
+  {
+    question: "Was zeichnet einen Menschen mit Polyaktilie aus?",
+    answers: {
+      1: "Er ist stumm.",
+      2: "Er hat mehr als 10 Finger.",
+      3: "Er hat nur eine Niere.",
+    },
+    right_answer: "Er hat mehr als 10 Finger.",
+  },
+  {
+    question: "Wie viele Blutgruppen gibt es bei einem Menschen?",
+    answers: {
+      1: "3",
+      2: "5",
+      3: "4",
+    },
+    right_answer: "4",
+  },
+  {
+    question: "Wer hat die Anatomie erfunden?",
+    answers: {
+      1: "Andreas Vesalius",
+      2: "Johan Wolfgang von Goethe",
+      3: "Es war keine einzelne Person, sondern eine Gruppe an Wissenschaftlern.",
+      4: "Monika Krohwinkel",
+    },
+    right_answer: "Andreas Vesalius",
+  },
+  {
+    question: "Was ist das wichtigste Organ des menschlichen Körpers?",
+    answers: {
+      1: "das Gehirn",
+      2: "das Herz",
+      3: "die Leber",
+    },
+    right_answer: "das Gehirn",
+  },
+  {
+    question: "Wie groß ist die Oberfläche der Lunge?",
+    answers: {
+      1: "20-30qm",
+      2: "100-140qm",
+      3: "200qm",
+    },
+    right_answer: "100-140qm",
+  },
+  {
+    question: "Wie oft schlägt das Herz am Tag?",
+    answers: {
+      1: "20.000x",
+      2: "200.000x",
+      3: "100.000x",
+      4: "24.000x",
+    },
+    right_answer: "100.000x",
+  },
 ];
 
 // Global Variable
@@ -111,11 +177,19 @@ function loadQuestion(index) {
                 </div>  
     `;
   }
+
   //   document.getElementById("answer_1").innerText = questions[index]["answer_1"];
   //   document.getElementById("answer_2").innerText = questions[index]["answer_2"];
   //   document.getElementById("answer_3").innerText = questions[index]["answer_3"];
   //   document.getElementById("answer_4").innerText = questions[index]["answer_4"];
   currentQuestionNumber.innerText = index + 1;
+  showBox();
+}
+function showBox() {
+  let cardBox = document.getElementById("card-box");
+  if (cardBox.classList.contains("d-none")) {
+    cardBox.classList.remove("d-none");
+  }
 }
 
 function checkIfSelected() {
@@ -139,6 +213,10 @@ function delay(time) {
 function submitQuestion() {
   let currentQuestion = currentQuestionNumber.innerText - 1;
   let selectedAnswer = document.querySelector(".answer-selected");
+  if (!selectedAnswer) {
+    document.getElementById("empty_answer").classList.remove("d-none");
+    return 0;
+  }
   if (checkAnswer() == "right_answer") {
     score++;
     scoreBoard.innerText = score;
@@ -167,6 +245,7 @@ function checkAnswer() {
 }
 
 function answer(answerClicked) {
+  document.getElementById("empty_answer").classList.add("d-none");
   if (document.querySelector(".answer-selected")) {
     if (
       document

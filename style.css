@@ -37,8 +37,9 @@ body {
 }
 
 .card-size {
-  min-width: 200px !important;
+  min-width: 500px !important;
   max-width: 1000px !important;
+  min-height: 500px !important;
 }
 
 .answer:hover {
