@@ -17,8 +17,15 @@
       <div class="card-wrapper">
         <div class="card mb-3 card-size d-none" id="card-box">
           <div class="row g-0">
-            <div class="col-md-8">
-              <div class="card-body">
+            <div class="card-content">
+              <div class="card-body" id="card-body-start">
+                <h5 class="card-title text-center">Anatomie Quiz</h5>
+                <img class="start-img" src="./img/logo.png" alt="" srcset="">
+                <p>Herzlich Willkommen zum Anatomie Quiz!</p>
+                <button onclick="startQuiz();" class="btn btn-primary">Quiz jetzt Starten</button>
+              </div>
+
+              <div class="card-body d-none" id="card-body-questions">
                 <h5 class="card-title text-center" id="question">Frage: </h5>
                 <div id="answer-container">
 
@@ -33,7 +40,14 @@
                 <div id="empty_answer" class="d-none"><b>Bitte eine Antwort auswählen</b></div>
 
 
+              </div>
+              <div class="card-body d-none" id="card-body-end">
+                <h5 class="card-title text-center">Herzlichen Glückwunsch!</h5>
+                <div id="end-content">
+
                 </div>
+                <button onclick="location.reload();" class="btn btn-primary">Erneut versuchen!</button>
+              </div>
               </div>
             </div>
           </div>

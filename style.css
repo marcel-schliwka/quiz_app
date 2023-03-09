@@ -21,7 +21,8 @@
   --car-left-color: rgb(39, 53, 92);
 }
 body {
-  background-color: var(--main-bg-color) !important;
+  background-image: url(./img/background.jpg);
+  background-position: center;
   min-height: 100vh;
 }
 .card-wrapper {
@@ -39,7 +40,6 @@ body {
 .card-size {
   min-width: 500px !important;
   max-width: 1000px !important;
-  min-height: 500px !important;
 }
 
 .answer:hover {
@@ -52,6 +52,13 @@ body {
   background-color: orange;
 }
 
+.answer-selected:hover {
+  background-color: orange !important;
+}
+
+.card-content {
+  padding: 10px 80px;
+}
 .right_answer {
   background-color: green;
 }
@@ -64,4 +71,16 @@ body {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+#card-body-start {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.start-img {
+  object-fit: cover;
+  height: 150px;
+  width: auto;
 }
