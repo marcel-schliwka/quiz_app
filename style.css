@@ -37,6 +37,30 @@ body {
 }
 
 .card-size {
-  min-width: 600px !important;
+  min-width: 200px !important;
   max-width: 1000px !important;
+}
+
+.answer:hover {
+  background-color: darkgray;
+  transition: 125ms ease-in-out;
+  cursor: pointer;
+}
+
+.answer-selected {
+  background-color: orange;
+}
+
+.right_answer {
+  background-color: green;
+}
+
+.wrong_answer {
+  background-color: darkred;
+}
+
+.question-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
 }

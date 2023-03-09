@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./app.js"></script>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -14,45 +13,24 @@
     />
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body onload="load()">
       <div class="card-wrapper">
         <div class="card mb-3 card-size">
           <div class="row g-0">
-            <div class="col-md-4  card-left-bg">
-              <img src="./img/logo.png" class="img-fluid rounded-start" alt="...">
-              <p>HTML</p>
-              <p>CSS</p>
-              <p>CSS</p>
-              <p>CSS</p>
-              <p>CSS</p>
-            </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">Wer hat HTML erfunden?</h5>
-                <div class="card mb-2">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                <h5 class="card-title text-center" id="question">Frage: </h5>
+                <div id="answer-container">
+
                 </div>
-                <div class="card mb-2">
-                  <div class="card-body ">
-                    This is some text within a card body.
-                  </div>
+
+                <div class="question-footer">
+                  <div class="footer-left"><b id="fromQuestionNumber">1</b> von <b id="toQuestionNumber">5</b> Fragen</div>
+                  <div class="footer-right"><button id="submitQuestion" onclick="submitQuestion();" class="btn btn-primary">Senden</button></div>
+                  
                 </div>
-                <div class="card mb-2">
-                  <div class="card-body ">
-                    This is some text within a card body.
-                  </div>
-                </div>
-                <div class="card mb-2">
-                  <div class="card-body ">
-                    This is some text within a card body.
-                  </div>
-                  <div class="question-footer">
-                    <b>1</b> von <b>5</b> Fragen
-                    <button></button>
-                  </div>
-                </div>
+                <div>Punkte: <b id="score">0</b></div>
+
 
                 </div>
               </div>
@@ -61,5 +39,8 @@
         </div>
       </div>
     </nav>
+
+    <script src="./app.js"></script>
+
   </body>
 </html>
