@@ -17,16 +17,72 @@
   --main-font: PT-Sans-Regular;
   --main-font-bold: PT-Sans-Bold;
   --secondary-font: Rubik;
+  --text-color: black;
+  --main-bg-color: rgb(190, 190, 190);
+  --card-left-color: #0d6efd;
+  --background-url: url(./img/background.webp);
+}
+
+html[data-theme="light"] {
   --main-bg-color: rgb(254, 250, 239);
-  --car-left-color: rgb(39, 53, 92);
+  --card-left-color: #0d6efd;
+  --main-bg-color: #f7f7f7;
+  --text-color: black;
+  --background-url: url(./img/background.webp);
+  --card-bg: url(./img/brainbg.jpg);
+}
+html[data-theme="dark"] {
+  --main-bg-color: rgb(254, 250, 239);
+  --card-left-color: rgb(39, 53, 92);
+  --main-bg-color: #434343;
+  --text-color: white;
+  --background-url: url(./img/background_dark.webp);
+  --card-bg: url(./img/brainbg_dark.jpg);
 }
 body {
-  background-image: url(./img/background2.jpg);
+  background-image: var(--background-url);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
 }
+
+button {
+  background-color: var(--card-left-color) !important;
+  border-color: var(--card-left-color) !important;
+}
+.darkmode-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#night-mode {
+  object-fit: cover;
+  position: absolute;
+  margin: 25px;
+  transition: 125ms ease-in-out;
+}
+#card-box {
+  background-image: var(--card-bg);
+  border-color: var(--main-bg-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mb-300 {
+  margin-bottom: 300px !important;
+}
+
+h5,
+p {
+  color: var(--text-color) !important;
+}
+#night-mode:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0 0.75rem orange);
+}
+
 .card-wrapper {
   display: flex;
   width: 100%;
@@ -36,12 +92,7 @@ body {
 }
 
 .card-left-bg {
-  background-color: var(--car-left-color);
-}
-
-.card-size {
-  min-width: 500px !important;
-  max-width: 1000px !important;
+  background-color: var(--card-left-color);
 }
 
 .answer:hover {
@@ -57,7 +108,9 @@ body {
 .answer-selected:hover {
   background-color: orange !important;
 }
-
+#card-box {
+  background-color: var(--main-bg-color) !important;
+}
 .card-content {
   padding: 10px 80px;
 }
@@ -73,9 +126,14 @@ body {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  color: var(--text-color);
 }
-
-#card-body-start {
+#score,
+.score {
+  color: var(--text-color);
+}
+#card-body-start,
+#card-body-end {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -83,6 +141,26 @@ body {
 
 .start-img {
   object-fit: cover;
-  height: 150px;
-  width: auto;
+  height: 200px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dark-blue {
+  background-color: var(--card-left-color) !important;
+}
+
+footer,
+footer a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media screen and (max-height: 875px) {
+  #night-mode {
+    margin: 10px;
+  }
 }

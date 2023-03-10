@@ -130,6 +130,7 @@ const questions = [
 ];
 
 // Global Variable
+let htmlElement = document.getElementById("main-html");
 let questionAmount = document.getElementById("toQuestionNumber");
 let cardBox = document.getElementById("card-box");
 let questionElement = document.getElementById("question");
@@ -139,12 +140,14 @@ let startScreen = document.getElementById("card-body-start");
 let questionsScreen = document.getElementById("card-body-questions");
 let endScreen = document.getElementById("card-body-end");
 let endContent = document.getElementById("end-content");
+let nightModeBtn = document.getElementById("night-mode");
 let score = 0;
 let wrong = 0;
 let scoreBoard = document.getElementById("score");
 // Functions
 
 function load() {
+  loadDataTheme();
   loadQuestion(0);
   questionAmount.innerText = checkAmount();
 }
@@ -189,7 +192,7 @@ function loadQuestion(index) {
   }
   let currentAnswers = shuffle(Object.values(questions[index].answers));
   answerContainer.innerHTML = "";
-  questionElement.innerText = `Frage ${index + 1}: \n ${
+  questionElement.innerText = `Frage ${index + 1}: \n\n ${
     questions[index]["question"]
   } \n\n`;
   let answerLength = Object.keys(questions[index].answers).length;
@@ -204,10 +207,6 @@ function loadQuestion(index) {
     `;
   }
 
-  //   document.getElementById("answer_1").innerText = questions[index]["answer_1"];
-  //   document.getElementById("answer_2").innerText = questions[index]["answer_2"];
-  //   document.getElementById("answer_3").innerText = questions[index]["answer_3"];
-  //   document.getElementById("answer_4").innerText = questions[index]["answer_4"];
   currentQuestionNumber.innerText = index + 1;
   show(cardBox);
 }
@@ -277,6 +276,7 @@ function checkAnswer() {
 
 function answer(answerClicked) {
   document.getElementById("empty_answer").classList.add("d-none");
+  checkIfAlreadyClicked();
   if (document.querySelector(".answer-selected")) {
     if (
       document
@@ -292,6 +292,37 @@ function answer(answerClicked) {
   document.getElementById(answerClicked).classList.toggle("answer-selected");
 }
 
+function checkIfAlreadyClicked() {
+  if (document.querySelectorAll(".answer-selected")) {
+    let elements = document.querySelectorAll(".answer-selected");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("answer-selected");
+    }
+  }
+}
+
+function darkMode() {
+  if (htmlElement.getAttribute("data-theme") == "light") {
+    localStorage.setItem("data-theme", "dark");
+    return htmlElement.setAttribute("data-theme", "dark");
+  }
+  if (htmlElement.getAttribute("data-theme") == "dark") {
+    localStorage.setItem("data-theme", "light");
+    return htmlElement.setAttribute("data-theme", "light");
+  }
+}
+
+function loadDataTheme() {
+  if (localStorage.getItem("data-theme")) {
+    return htmlElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("data-theme")
+    );
+  }
+}
+// Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   return shuffle(questions);
 });
+
+nightModeBtn.addEventListener("click", darkMode);
