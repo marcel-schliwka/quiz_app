@@ -21,8 +21,10 @@
   --car-left-color: rgb(39, 53, 92);
 }
 body {
-  background-image: url(./img/background.jpg);
+  background-image: url(./img/background2.jpg);
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 .card-wrapper {
