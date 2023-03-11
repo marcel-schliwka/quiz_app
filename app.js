@@ -141,6 +141,7 @@ let questionsScreen = document.getElementById("card-body-questions");
 let endScreen = document.getElementById("card-body-end");
 let endContent = document.getElementById("end-content");
 let nightModeBtn = document.getElementById("night-mode");
+let progressBar = document.getElementById("progress-bar");
 let score = 0;
 let wrong = 0;
 let scoreBoard = document.getElementById("score");
@@ -190,6 +191,7 @@ function loadQuestion(index) {
     endQuiz();
     return 0;
   }
+  updateProgressBar(index);
   let currentAnswers = shuffle(Object.values(questions[index].answers));
   answerContainer.innerHTML = "";
   questionElement.innerText = `Frage ${index + 1}: \n\n ${
@@ -320,6 +322,14 @@ function loadDataTheme() {
     );
   }
 }
+
+function updateProgressBar(index) {
+  let currentPercent = (index + 1) / (questions.length + 1);
+  currentPercent = Math.round(currentPercent * 100);
+  progressBar.style = `width: ${currentPercent}%;`;
+  progressBar.innerText = `${currentPercent}%`;
+}
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   return shuffle(questions);
